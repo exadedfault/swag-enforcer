@@ -500,6 +500,38 @@
           "savetovariabletype": "temp"
         }
       ]
+    },
+    {
+      "name": "+l",
+      "perms": [],
+      "actions": [
+        {
+          "name": "getment",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "neNEEEbtdsda",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "fdfdf",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "amount",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": "2"
+        },
+        {
+          "name": "pluslvl",
+          "category": "User Data",
+          "type": "Edit User Data",
+          "user": "${tempVars.neNEEEbtdsda.id}",
+          "field": "xp15",
+          "oper": "+",
+          "value": "${tempVars.amount}"
+        }
+      ]
     }
   ]
 }

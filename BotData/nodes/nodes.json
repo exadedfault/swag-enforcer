@@ -1686,6 +1686,129 @@
       "x": 7,
       "y": 1680,
       "perms": []
+    },
+    {
+      "type": "command",
+      "name": "+l",
+      "guid": "5d7e6b3d-e212-4ee3-ba83-345d76d7d75c",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "8e8a8d9c-495e-4697-b052-0bccca99726e"
+          ]
+        }
+      ],
+      "x": 12,
+      "y": 1892,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "getment",
+      "guid": "8e8a8d9c-495e-4697-b052-0bccca99726e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d3f00362-9ade-4edb-ab7f-611c7fbd581d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5d7e6b3d-e212-4ee3-ba83-345d76d7d75c"
+        }
+      ],
+      "x": 196,
+      "y": 1879,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "neNEEEbtdsda",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "pluslvl",
+      "guid": "11fdc27e-2ee2-4d2f-82cb-cef7535f340a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d3f00362-9ade-4edb-ab7f-611c7fbd581d"
+        }
+      ],
+      "x": 607,
+      "y": 1904,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${tempVars.neNEEEbtdsda.id}",
+        "xp15",
+        "+",
+        "${tempVars.amount}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "fdfdf",
+      "guid": "d3f00362-9ade-4edb-ab7f-611c7fbd581d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "11fdc27e-2ee2-4d2f-82cb-cef7535f340a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8e8a8d9c-495e-4697-b052-0bccca99726e"
+        }
+      ],
+      "x": 383,
+      "y": 1938,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "amount",
+        "Number",
+        "temp",
+        "2"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
     }
   ]
 }
