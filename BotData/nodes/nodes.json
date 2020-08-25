@@ -1503,6 +1503,189 @@
         "saveToVariable",
         "saveToVariableType"
       ]
+    },
+    {
+      "type": "response",
+      "name": "getswagers",
+      "guid": "affcab93-d2c5-4ca7-86a7-1fe1408e1baf",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2dfdbc69-cb05-499a-8752-14d95589f993"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5b2f1fed-c960-4770-90b1-2779cbc2b015"
+        }
+      ],
+      "x": 402,
+      "y": 1662,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${tempVars.usrinfo.id}",
+        "xp15",
+        "userinfoembedswag",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getusersfd",
+      "guid": "5b2f1fed-c960-4770-90b1-2779cbc2b015",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "affcab93-d2c5-4ca7-86a7-1fe1408e1baf"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8bb71500-af54-4c8e-9d7e-352f04f351db"
+        }
+      ],
+      "x": 190,
+      "y": 1654,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "usrinfo",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "doemebedinfo",
+      "guid": "2dfdbc69-cb05-499a-8752-14d95589f993",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Swag level",
+          "value": "${tempVars.userinfoembedswag}",
+          "inline": "false"
+        },
+        {
+          "name": "ID",
+          "value": "${tempVars.usrinfo.id}",
+          "inline": "false"
+        },
+        {
+          "name": "",
+          "value": "",
+          "inline": "false"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "affcab93-d2c5-4ca7-86a7-1fe1408e1baf"
+        }
+      ],
+      "x": 611,
+      "y": 1662,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "ABD2FF",
+        "Swag info for ${tempVars.usrinfo.displayName}",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "",
+        "Last message sent : ${tempVars.usrinfo.lastMessage}",
+        "${tempVars.usrinfo.user.avatarURL}",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getswagsdf",
+      "guid": "1cf25d37-b173-401b-ae79-f886e414a951",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": []
+        }
+      ],
+      "x": 250,
+      "y": 1250,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data"
+    },
+    {
+      "type": "command",
+      "name": "info",
+      "guid": "8bb71500-af54-4c8e-9d7e-352f04f351db",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5b2f1fed-c960-4770-90b1-2779cbc2b015"
+          ]
+        }
+      ],
+      "x": 7,
+      "y": 1680,
+      "perms": []
     }
   ]
 }

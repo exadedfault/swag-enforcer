@@ -118,7 +118,7 @@
           "category": "Bot Action",
           "type": "More Status",
           "statusoption": "PLAYING",
-          "statustext": "Enforcing swag"
+          "statustext": "Enforcing swag in $$Servers$$ servers."
         },
         {
           "name": "frerr",
@@ -436,6 +436,66 @@
           "image": "",
           "footer": "${dbsVars.CommandAuthor.displayName} | swag level ${tempVars.p3}",
           "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "perms": [],
+      "actions": [
+        {
+          "name": "getusersfd",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "usrinfo",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "getswagers",
+          "category": "User Data",
+          "type": "Get User Data",
+          "user": "${tempVars.usrinfo.id}",
+          "field": "xp15",
+          "varname": "userinfoembedswag",
+          "savevartype": "temp",
+          "vartype": "User"
+        },
+        {
+          "name": "doemebedinfo",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "Swag level",
+              "value": "${tempVars.userinfoembedswag}",
+              "inline": "false"
+            },
+            {
+              "name": "ID",
+              "value": "${tempVars.usrinfo.id}",
+              "inline": "false"
+            },
+            {
+              "name": "",
+              "value": "",
+              "inline": "false"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "ABD2FF",
+          "title": "Swag info for ${tempVars.usrinfo.displayName}",
+          "url": "",
+          "authorname": "${dbsVars.CommandAuthor.displayName}",
+          "authorimageurl": "${dbsVars.CommandAuthor.user.avatarURL}",
+          "authorlink": "",
+          "description": "Last message sent : ${tempVars.usrinfo.lastMessage}",
+          "thumbnail": "${tempVars.usrinfo.user.avatarURL}",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
           "savetovariable": "",
           "savetovariabletype": "temp"
         }
