@@ -1,0 +1,81 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "weknum",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "537858637981548544",
+          "color": "FF4DD8",
+          "title": "${tempVars.newuser.displayName} 𝓦𝓔𝓛𝓒𝓞𝓜𝓔 𝓣𝓞 𝓚𝓘𝓝𝓖𝓓𝓞𝓜 𝓞𝓕 𝓢𝓦𝓐𝓖𝓖",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "",
+          "thumbnail": "",
+          "image": "https://media.discordapp.net/attachments/537851271575633933/747028784347348992/4cetbg.gif",
+          "footer": "",
+          "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [
+        {
+          "name": "xp",
+          "category": "Variable",
+          "type": "Generate Random Number",
+          "varname": "xprandom",
+          "min": "1",
+          "max": "1",
+          "savevartype": "temp"
+        },
+        {
+          "name": "give",
+          "category": "User Data",
+          "type": "Edit User Data",
+          "user": "${tempVars.msguser.id}",
+          "field": "xp15",
+          "oper": "+",
+          "value": "${tempVars.xprandom}"
+        }
+      ],
+      "var": {
+        "user": "msguser"
+      }
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    }
+  ]
+}

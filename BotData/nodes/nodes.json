@@ -1,0 +1,1508 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "mm",
+      "guid": "297ada4a-982b-45ef-aca6-2b2b6cea761d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "25343125-b32f-4122-9e13-0e2b3fec947a"
+          ]
+        }
+      ],
+      "x": 21,
+      "y": 60
+    },
+    {
+      "type": "response",
+      "name": "hjhj",
+      "guid": "25343125-b32f-4122-9e13-0e2b3fec947a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5ceb0c92-6948-4fbe-9dd2-7cfb194cbe56"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "297ada4a-982b-45ef-aca6-2b2b6cea761d"
+        }
+      ],
+      "x": 186,
+      "y": 58,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "usr",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "yes",
+      "guid": "5ceb0c92-6948-4fbe-9dd2-7cfb194cbe56",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "25343125-b32f-4122-9e13-0e2b3fec947a"
+        }
+      ],
+      "x": 345,
+      "y": 59,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Working! ${dbsVars.CommandAuthor.displayName}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "ban",
+      "guid": "286822f1-c153-4b1e-a56e-b85ea1363ffa",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "8e73ab27-1607-4469-a616-3b588a1341db"
+          ]
+        }
+      ],
+      "x": 16,
+      "y": 235,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Doban",
+      "guid": "d609ee18-fb84-4817-8d2d-e59e8f792678",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b15e6ea0-caee-4732-bc54-d0451035be61"
+        }
+      ],
+      "x": 849,
+      "y": 217,
+      "rtype": "User Action",
+      "rsubtype": "Ban User",
+      "formdata": [
+        "${tempVars.usr2.id}",
+        "",
+        ""
+      ],
+      "formnames": [
+        "user",
+        "reason",
+        "days"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkbot",
+      "guid": "f13990eb-3b36-403b-9bdf-a994e6b9f8df",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "4090081c-90a1-4522-8145-4ace02b772bb"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "9512d022-7351-4869-81ef-36cb0b015821"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8e73ab27-1607-4469-a616-3b588a1341db"
+        }
+      ],
+      "x": 362,
+      "y": 234,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "631658006567714826",
+        [
+          "BAN_MEMBERS"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "sayban",
+      "guid": "48effaf0-a87a-47fa-a945-d20ce169c755",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4090081c-90a1-4522-8145-4ace02b772bb"
+        }
+      ],
+      "x": 1180,
+      "y": -29,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.usr2.displayName} didn't have enough swagger",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "usr2",
+      "guid": "8e73ab27-1607-4469-a616-3b588a1341db",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f13990eb-3b36-403b-9bdf-a994e6b9f8df"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "286822f1-c153-4b1e-a56e-b85ea1363ffa"
+        }
+      ],
+      "x": 187,
+      "y": 234,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "usr2",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "noperms",
+      "guid": "9512d022-7351-4869-81ef-36cb0b015821",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f13990eb-3b36-403b-9bdf-a994e6b9f8df"
+        }
+      ],
+      "x": 522,
+      "y": 359,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Bot doesn't have enough $wag to ban ${tempVars.usr2.displayName}.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "rtrtr",
+      "guid": "0b785b14-2664-4a6d-b16c-9d2a8c84dcdb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a9c3b0bd-f93c-4772-a8bd-65e8e2010e67"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3194cc1c-9350-4fd0-bc13-bc7e3d822734"
+        }
+      ],
+      "x": 976,
+      "y": 107,
+      "rtype": "Bot Action",
+      "rsubtype": "More Status",
+      "formdata": [
+        "PLAYING",
+        "Enforcing swag in $$Servers$$ servers."
+      ],
+      "formnames": [
+        "statusOption",
+        "statusText"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "stat",
+      "guid": "3194cc1c-9350-4fd0-bc13-bc7e3d822734",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "0b785b14-2664-4a6d-b16c-9d2a8c84dcdb"
+          ]
+        }
+      ],
+      "x": 777,
+      "y": 22,
+      "perms": [
+        "seeky"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hghfg",
+      "guid": "4090081c-90a1-4522-8145-4ace02b772bb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "b15e6ea0-caee-4732-bc54-d0451035be61"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "154e5d0e-1479-48c5-8412-49f2d03bcf7f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f13990eb-3b36-403b-9bdf-a994e6b9f8df"
+        }
+      ],
+      "x": 530,
+      "y": 197,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "BAN_MEMBERS"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "noswag",
+      "guid": "154e5d0e-1479-48c5-8412-49f2d03bcf7f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4090081c-90a1-4522-8145-4ace02b772bb"
+        }
+      ],
+      "x": 685,
+      "y": 346,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "You don't have enough swagger to use this command",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nopermsembed",
+      "guid": "b15e6ea0-caee-4732-bc54-d0451035be61",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d609ee18-fb84-4817-8d2d-e59e8f792678"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4090081c-90a1-4522-8145-4ace02b772bb"
+        }
+      ],
+      "x": 691,
+      "y": 210,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF006A",
+        "${tempVars.usr2.displayName} didn't have enough swagger",
+        "",
+        "",
+        "",
+        "",
+        "Their final message was \"${tempVars.usr2.lastMessage}\"",
+        "${tempVars.usr2.user.avatarURL}",
+        "",
+        "${tempVars.usr2.id} kicked by: ${dbsVars.CommandAuthor.displayName}",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "kick",
+      "guid": "f32d1c2b-1bcf-400d-a0cb-df16f37d9f52",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "3487ad60-e2e8-40c9-a926-44e202ef7190"
+          ]
+        }
+      ],
+      "x": 17,
+      "y": 504
+    },
+    {
+      "type": "response",
+      "name": "usr3",
+      "guid": "3487ad60-e2e8-40c9-a926-44e202ef7190",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "06550e27-e6a6-4f70-9c42-1eee3b21047a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f32d1c2b-1bcf-400d-a0cb-df16f37d9f52"
+        }
+      ],
+      "x": 176,
+      "y": 495,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "usr3",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkbot2",
+      "guid": "06550e27-e6a6-4f70-9c42-1eee3b21047a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "977a4649-7b95-4519-972d-5c512a3d7071"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "07d7ad54-79ba-46eb-96c5-f5b49f6db8ec"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3487ad60-e2e8-40c9-a926-44e202ef7190"
+        }
+      ],
+      "x": 345,
+      "y": 502,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "631658006567714826",
+        [
+          "KICK_MEMBERS"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "noperms2",
+      "guid": "07d7ad54-79ba-46eb-96c5-f5b49f6db8ec",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "06550e27-e6a6-4f70-9c42-1eee3b21047a"
+        }
+      ],
+      "x": 518,
+      "y": 686,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Bot doesn't have enough $wag to kick ${tempVars.usr3.displayName}.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkuserpermkick",
+      "guid": "977a4649-7b95-4519-972d-5c512a3d7071",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "b07378e3-f2e1-476a-ab20-e9900e0d572c"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "54f499a4-413d-45d1-911b-1cf1c92a58bd"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "06550e27-e6a6-4f70-9c42-1eee3b21047a"
+        }
+      ],
+      "x": 529,
+      "y": 467,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "KICK_MEMBERS"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "kickembed",
+      "guid": "b07378e3-f2e1-476a-ab20-e9900e0d572c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "646ea8d7-2a1c-4f42-8801-d59ff7c50180"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "977a4649-7b95-4519-972d-5c512a3d7071"
+        }
+      ],
+      "x": 699,
+      "y": 466,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FFFFFF",
+        "${tempVars.usr3.displayName} didn't have enough swagger",
+        "",
+        "",
+        "",
+        "",
+        "Their final message was \"${tempVars.usr3.lastMessage}\"",
+        "${tempVars.usr3.user.avatarURL}",
+        "",
+        "${tempVars.usr3.id} kicked by: ${dbsVars.CommandAuthor.displayName}",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "noswag4kick",
+      "guid": "54f499a4-413d-45d1-911b-1cf1c92a58bd",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "977a4649-7b95-4519-972d-5c512a3d7071"
+        }
+      ],
+      "x": 718,
+      "y": 638,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "You don't have enough swagger to use this command",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "klciekdnerdf",
+      "guid": "646ea8d7-2a1c-4f42-8801-d59ff7c50180",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b07378e3-f2e1-476a-ab20-e9900e0d572c"
+        }
+      ],
+      "x": 870,
+      "y": 474,
+      "rtype": "User Action",
+      "rsubtype": "Kick User",
+      "formdata": [
+        "${tempVars.usr3.id}",
+        ""
+      ],
+      "formnames": [
+        "user",
+        "reason"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "meter",
+      "guid": "2be395c2-fd3b-4bb3-adba-cc14e18090b6",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "6c00d6bf-4b4d-4b00-9247-472aae4451c4"
+          ]
+        }
+      ],
+      "x": 44,
+      "y": 852
+    },
+    {
+      "type": "response",
+      "name": "test",
+      "guid": "32250900-ceda-4ee9-8f44-cbc1a7e1aa71",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": []
+        },
+        {
+          "label": "row not found",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": []
+        }
+      ],
+      "x": -32,
+      "y": 645,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row"
+    },
+    {
+      "type": "response",
+      "name": "yiyui",
+      "guid": "1dcb5ee6-63c6-4abf-a869-02aa3cc94140",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "9140b464-646c-4d31-89fb-b5134ad4ab7f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6c00d6bf-4b4d-4b00-9247-472aae4451c4"
+        }
+      ],
+      "x": 409,
+      "y": 828,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "xp15",
+        "bhbfghgfh",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "resetswaglevel",
+      "guid": "7302fbcb-ed0c-4aee-a9ef-5f4b27d7adb0",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "7863062a-5206-453f-8791-c5dfbb26f89d"
+          ]
+        }
+      ],
+      "x": 10,
+      "y": 1005,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "removeswager",
+      "guid": "7863062a-5206-453f-8791-c5dfbb26f89d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7302fbcb-ed0c-4aee-a9ef-5f4b27d7adb0"
+        }
+      ],
+      "x": 157,
+      "y": 994,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "xp15",
+        "0"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "purge",
+      "guid": "7bd88cbf-dbb5-4355-9925-74ff0c70de18",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "18b7d28d-e308-4780-a269-e925c5a5bc64"
+          ]
+        }
+      ],
+      "x": 87,
+      "y": 1218
+    },
+    {
+      "type": "response",
+      "name": "number",
+      "guid": "18b7d28d-e308-4780-a269-e925c5a5bc64",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "8a963218-5b8f-4f0b-a814-a636214a2211"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7bd88cbf-dbb5-4355-9925-74ff0c70de18"
+        }
+      ],
+      "x": 252,
+      "y": 1207,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "purgeammou",
+        "Number",
+        "temp",
+        ""
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "dles",
+      "guid": "960e2da2-d13b-400f-b59e-e98333a5fed7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "94f41382-6e43-420a-aae8-97880b83e6c6"
+        }
+      ],
+      "x": 985,
+      "y": 1146,
+      "rtype": "Channel Action",
+      "rsubtype": "Delete All Messages",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.purgeammou}"
+      ],
+      "formnames": [
+        "channelname",
+        "msgcount"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "fgfg",
+      "guid": "8a963218-5b8f-4f0b-a814-a636214a2211",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ca0d436b-c4bb-4217-bf4e-6eaaf73aea01"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "18b7d28d-e308-4780-a269-e925c5a5bc64"
+        }
+      ],
+      "x": 437,
+      "y": 1207,
+      "rtype": "Variable",
+      "rsubtype": "Edit Variable",
+      "formdata": [
+        "${tempVars.purgeammou}",
+        "temp",
+        "+",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "b27642cd-106c-43e4-9bef-0b6ae7537fc6",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "b3294e8b-fb5c-47df-9dcb-b8d8fe10a94a"
+          ]
+        }
+      ],
+      "x": 43,
+      "y": 1424
+    },
+    {
+      "type": "response",
+      "name": "helpmemu",
+      "guid": "d925a911-56cf-44e5-9a74-4075724f9863",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "*swag-kick",
+          "value": "kicks @user",
+          "inline": "false"
+        },
+        {
+          "name": "*swag-ban",
+          "value": "bans @user",
+          "inline": "false"
+        },
+        {
+          "name": "~swag-meter",
+          "value": "checks your swag",
+          "inline": "false"
+        },
+        {
+          "name": "~swag-resetswaglevel",
+          "value": "sets your swag level to 0",
+          "inline": "false"
+        },
+        {
+          "name": "$swag-stat",
+          "value": "sets bot status",
+          "inline": "false"
+        },
+        {
+          "name": "*swag-purge",
+          "value": "purge x amount of messages",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b3294e8b-fb5c-47df-9dcb-b8d8fe10a94a"
+        }
+      ],
+      "x": 454,
+      "y": 1412,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "AB61FF",
+        "all commands",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "~ anyone \n* admin only\n$ bot owner only",
+        "https://tenor.com/view/swag-its-all-about-swag-gif-3553863",
+        "",
+        "${dbsVars.CommandAuthor.displayName} | swag level ${tempVars.p3}",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "helpswaglevel",
+      "guid": "b3294e8b-fb5c-47df-9dcb-b8d8fe10a94a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d925a911-56cf-44e5-9a74-4075724f9863"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b27642cd-106c-43e4-9bef-0b6ae7537fc6"
+        }
+      ],
+      "x": 224,
+      "y": 1386,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "xp15",
+        "p3",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "chk1",
+      "guid": "6c00d6bf-4b4d-4b00-9247-472aae4451c4",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "1dcb5ee6-63c6-4abf-a869-02aa3cc94140"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "c1adc157-7119-4644-9f69-d9f77b1c8873"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2be395c2-fd3b-4bb3-adba-cc14e18090b6"
+        }
+      ],
+      "x": 204,
+      "y": 778,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "xp15",
+        "greater than",
+        "1"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "noswaglevl",
+      "guid": "c1adc157-7119-4644-9f69-d9f77b1c8873",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6c00d6bf-4b4d-4b00-9247-472aae4451c4"
+        }
+      ],
+      "x": 438,
+      "y": 978,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "You have no Swag ",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "frerr",
+      "guid": "a9c3b0bd-f93c-4772-a8bd-65e8e2010e67",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "0b785b14-2664-4a6d-b16c-9d2a8c84dcdb"
+        }
+      ],
+      "x": 1171,
+      "y": 126,
+      "rtype": "Bot Action",
+      "rsubtype": "Set Status",
+      "formdata": [
+        "DnD"
+      ],
+      "formnames": [
+        "status"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "purgebotcheck",
+      "guid": "ca0d436b-c4bb-4217-bf4e-6eaaf73aea01",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "94f41382-6e43-420a-aae8-97880b83e6c6"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "2aa2b5ae-5392-4da5-b99f-c7b875c81bfe"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8a963218-5b8f-4f0b-a814-a636214a2211"
+        }
+      ],
+      "x": 599,
+      "y": 1203,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "631658006567714826",
+        [
+          "MANAGE_CHANNELS",
+          "MANAGE_MESSAGES",
+          "READ_MESSAGE_HISTORY"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "purgeusercheck",
+      "guid": "94f41382-6e43-420a-aae8-97880b83e6c6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "960e2da2-d13b-400f-b59e-e98333a5fed7"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "1eefbddb-8d22-4820-9d9b-f6b1b77ba8d5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ca0d436b-c4bb-4217-bf4e-6eaaf73aea01"
+        }
+      ],
+      "x": 779,
+      "y": 1199,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "MANAGE_CHANNELS",
+          "MANAGE_MESSAGES",
+          "READ_MESSAGE_HISTORY"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "purgenoswaagga",
+      "guid": "2aa2b5ae-5392-4da5-b99f-c7b875c81bfe",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ca0d436b-c4bb-4217-bf4e-6eaaf73aea01"
+        }
+      ],
+      "x": 750,
+      "y": 1385,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Bot doesn't have enough $wag to purge <#${dbsVars.CommandChannel.id}>",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "purgeusernoswaga",
+      "guid": "1eefbddb-8d22-4820-9d9b-f6b1b77ba8d5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "94f41382-6e43-420a-aae8-97880b83e6c6"
+        }
+      ],
+      "x": 958,
+      "y": 1397,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "You don't have enough swagger to use this command",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "lol",
+      "guid": "9140b464-646c-4d31-89fb-b5134ad4ab7f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c6cdfb52-b58c-415e-be0f-20440f03d2c6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1dcb5ee6-63c6-4abf-a869-02aa3cc94140"
+        }
+      ],
+      "x": 584,
+      "y": 869,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "xp15",
+        "-",
+        "1"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "saaymeter",
+      "guid": "c6cdfb52-b58c-415e-be0f-20440f03d2c6",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "",
+          "value": "",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9140b464-646c-4d31-89fb-b5134ad4ab7f"
+        }
+      ],
+      "x": 806,
+      "y": 892,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "F700FF",
+        "${dbsVars.CommandAuthor.displayName}'s Swag level is ${tempVars.bhbfghgfh}",
+        "https://tenor.com/8GSM.gif",
+        "${dbsVars.CommandAuthor.displayName}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "",
+        "",
+        "http://i.imgur.com/6a10yGD.png",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    }
+  ]
+}

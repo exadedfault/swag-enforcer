@@ -1,0 +1,445 @@
+{
+  "command": [
+    {
+      "name": "mm",
+      "actions": [
+        {
+          "name": "hjhj",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "usr",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "yes",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "Working! ${dbsVars.CommandAuthor.displayName}",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "ban",
+      "perms": [],
+      "actions": [
+        {
+          "name": "usr2",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "usr2",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "checkbot",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "hghfg",
+              "category": "User Action",
+              "type": "Check User Permissions",
+              "trueActions": [
+                {
+                  "name": "nopermsembed",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF006A",
+                  "title": "${tempVars.usr2.displayName} didn't have enough swagger",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "Their final message was \"${tempVars.usr2.lastMessage}\"",
+                  "thumbnail": "${tempVars.usr2.user.avatarURL}",
+                  "image": "",
+                  "footer": "${tempVars.usr2.id} kicked by: ${dbsVars.CommandAuthor.displayName}",
+                  "timestamp": "BOOL_TRUE@@",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "Doban",
+                  "category": "User Action",
+                  "type": "Ban User",
+                  "user": "${tempVars.usr2.id}",
+                  "reason": "",
+                  "days": ""
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "noswag",
+                  "category": "Message",
+                  "type": "Send Message",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "messagetext": "You don't have enough swagger to use this command",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "user": "${dbsVars.CommandAuthor.id}",
+              "permissions": [
+                "BAN_MEMBERS"
+              ]
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "noperms",
+              "category": "Message",
+              "type": "Send Message",
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Bot doesn't have enough $wag to ban ${tempVars.usr2.displayName}.",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "user": "631658006567714826",
+          "permissions": [
+            "BAN_MEMBERS"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stat",
+      "perms": [
+        "seeky"
+      ],
+      "actions": [
+        {
+          "name": "rtrtr",
+          "category": "Bot Action",
+          "type": "More Status",
+          "statusoption": "PLAYING",
+          "statustext": "Enforcing swag in $$Servers$$ servers."
+        },
+        {
+          "name": "frerr",
+          "category": "Bot Action",
+          "type": "Set Status",
+          "status": "DnD"
+        }
+      ]
+    },
+    {
+      "name": "kick",
+      "actions": [
+        {
+          "name": "usr3",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "varname": "usr3",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "checkbot2",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "checkuserpermkick",
+              "category": "User Action",
+              "type": "Check User Permissions",
+              "trueActions": [
+                {
+                  "name": "kickembed",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FFFFFF",
+                  "title": "${tempVars.usr3.displayName} didn't have enough swagger",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "Their final message was \"${tempVars.usr3.lastMessage}\"",
+                  "thumbnail": "${tempVars.usr3.user.avatarURL}",
+                  "image": "",
+                  "footer": "${tempVars.usr3.id} kicked by: ${dbsVars.CommandAuthor.displayName}",
+                  "timestamp": "BOOL_TRUE@@",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "klciekdnerdf",
+                  "category": "User Action",
+                  "type": "Kick User",
+                  "user": "${tempVars.usr3.id}",
+                  "reason": ""
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "noswag4kick",
+                  "category": "Message",
+                  "type": "Send Message",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "messagetext": "You don't have enough swagger to use this command",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "user": "${dbsVars.CommandAuthor.id}",
+              "permissions": [
+                "KICK_MEMBERS"
+              ]
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "noperms2",
+              "category": "Message",
+              "type": "Send Message",
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Bot doesn't have enough $wag to kick ${tempVars.usr3.displayName}.",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "user": "631658006567714826",
+          "permissions": [
+            "KICK_MEMBERS"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "meter",
+      "actions": [
+        {
+          "name": "chk1",
+          "category": "User Data",
+          "type": "Check User Data",
+          "trueActions": [
+            {
+              "name": "yiyui",
+              "category": "User Data",
+              "type": "Get User Data",
+              "user": "${dbsVars.CommandAuthor.id}",
+              "field": "xp15",
+              "varname": "bhbfghgfh",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "lol",
+              "category": "User Data",
+              "type": "Edit User Data",
+              "user": "${dbsVars.CommandAuthor.id}",
+              "field": "xp15",
+              "oper": "-",
+              "value": "1"
+            },
+            {
+              "name": "saaymeter",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "",
+                  "value": "",
+                  "inline": "true"
+                }
+              ],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "F700FF",
+              "title": "${dbsVars.CommandAuthor.displayName}'s Swag level is ${tempVars.bhbfghgfh}",
+              "url": "https://tenor.com/8GSM.gif",
+              "authorname": "${dbsVars.CommandAuthor.displayName}",
+              "authorimageurl": "${dbsVars.CommandAuthor.user.avatarURL}",
+              "authorlink": "",
+              "description": "",
+              "thumbnail": "http://i.imgur.com/6a10yGD.png",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "noswaglevl",
+              "category": "Message",
+              "type": "Send Message",
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "You have no Swag ",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "field": "xp15",
+          "compare": "greater than",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "name": "resetswaglevel",
+      "perms": [],
+      "actions": [
+        {
+          "name": "removeswager",
+          "category": "User Data",
+          "type": "Set User Data",
+          "user": "${dbsVars.CommandAuthor.id}",
+          "field": "xp15",
+          "fieldvalue": "0"
+        }
+      ]
+    },
+    {
+      "name": "purge",
+      "actions": [
+        {
+          "name": "number",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "purgeammou",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": ""
+        },
+        {
+          "name": "fgfg",
+          "category": "Variable",
+          "type": "Edit Variable",
+          "varname": "${tempVars.purgeammou}",
+          "savevartype": "temp",
+          "oper": "+",
+          "value": "1"
+        },
+        {
+          "name": "purgebotcheck",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "purgeusercheck",
+              "category": "User Action",
+              "type": "Check User Permissions",
+              "trueActions": [
+                {
+                  "name": "dles",
+                  "category": "Channel Action",
+                  "type": "Delete All Messages",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "msgcount": "${tempVars.purgeammou}"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "purgeusernoswaga",
+                  "category": "Message",
+                  "type": "Send Message",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "messagetext": "You don't have enough swagger to use this command",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "user": "${dbsVars.CommandAuthor.id}",
+              "permissions": [
+                "MANAGE_CHANNELS",
+                "MANAGE_MESSAGES",
+                "READ_MESSAGE_HISTORY"
+              ]
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "purgenoswaagga",
+              "category": "Message",
+              "type": "Send Message",
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Bot doesn't have enough $wag to purge <#${dbsVars.CommandChannel.id}>",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "user": "631658006567714826",
+          "permissions": [
+            "MANAGE_CHANNELS",
+            "MANAGE_MESSAGES",
+            "READ_MESSAGE_HISTORY"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "help",
+      "actions": [
+        {
+          "name": "helpswaglevel",
+          "category": "User Data",
+          "type": "Get User Data",
+          "user": "${dbsVars.CommandAuthor.id}",
+          "field": "xp15",
+          "varname": "p3",
+          "savevartype": "temp",
+          "vartype": "User"
+        },
+        {
+          "name": "helpmemu",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "*swag-kick",
+              "value": "kicks @user",
+              "inline": "false"
+            },
+            {
+              "name": "*swag-ban",
+              "value": "bans @user",
+              "inline": "false"
+            },
+            {
+              "name": "~swag-meter",
+              "value": "checks your swag",
+              "inline": "false"
+            },
+            {
+              "name": "~swag-resetswaglevel",
+              "value": "sets your swag level to 0",
+              "inline": "false"
+            },
+            {
+              "name": "$swag-stat",
+              "value": "sets bot status",
+              "inline": "false"
+            },
+            {
+              "name": "*swag-purge",
+              "value": "purge x amount of messages",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "AB61FF",
+          "title": "all commands",
+          "url": "",
+          "authorname": "${dbsVars.CommandAuthor.displayName}",
+          "authorimageurl": "${dbsVars.CommandAuthor.user.avatarURL}",
+          "authorlink": "${dbsVars.CommandAuthor.user.avatarURL}",
+          "description": "~ anyone \n* admin only\n$ bot owner only",
+          "thumbnail": "https://tenor.com/view/swag-its-all-about-swag-gif-3553863",
+          "image": "",
+          "footer": "${dbsVars.CommandAuthor.displayName} | swag level ${tempVars.p3}",
+          "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    }
+  ]
+}
