@@ -118,7 +118,7 @@
           "category": "Bot Action",
           "type": "More Status",
           "statusoption": "PLAYING",
-          "statustext": "Enforcing swag in $$Servers$$ servers."
+          "statustext": "Enforcing swag"
         },
         {
           "name": "frerr",
