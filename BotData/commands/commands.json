@@ -520,7 +520,7 @@
           "varname": "amount",
           "vartype": "Number",
           "savevartype": "temp",
-          "param": "2"
+          "param": "1"
         },
         {
           "name": "pluslvl",
@@ -530,6 +530,25 @@
           "field": "xp15",
           "oper": "+",
           "value": "${tempVars.amount}"
+        },
+        {
+          "name": "added",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "000000",
+          "title": "Added ${tempVars.amount} swag to ${tempVars.neNEEEbtdsda.displayName}",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "",
+          "thumbnail": "",
+          "image": "",
+          "footer": "${tempVars.neNEEEbtdsda.displayHexColor}",
+          "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
         }
       ]
     }

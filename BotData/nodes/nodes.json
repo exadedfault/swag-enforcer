@@ -1699,8 +1699,8 @@
           ]
         }
       ],
-      "x": 12,
-      "y": 1892,
+      "x": 14,
+      "y": 1896,
       "perms": []
     },
     {
@@ -1747,7 +1747,9 @@
       "outputs": [
         {
           "label": "next response",
-          "connections": []
+          "connections": [
+            "5e722f1f-8b15-47a1-9f1b-2d6be8caa946"
+          ]
         }
       ],
       "inputs": [
@@ -1756,8 +1758,8 @@
           "id": "d3f00362-9ade-4edb-ab7f-611c7fbd581d"
         }
       ],
-      "x": 607,
-      "y": 1904,
+      "x": 610,
+      "y": 1942,
       "rtype": "User Data",
       "rsubtype": "Edit User Data",
       "formdata": [
@@ -1793,21 +1795,76 @@
           "id": "8e8a8d9c-495e-4697-b052-0bccca99726e"
         }
       ],
-      "x": 383,
-      "y": 1938,
+      "x": 387,
+      "y": 1856,
       "rtype": "Variable",
       "rsubtype": "Store Value in Variable",
       "formdata": [
         "amount",
         "Number",
         "temp",
-        "2"
+        "1"
       ],
       "formnames": [
         "varname",
         "vartype",
         "saveVarType",
         "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "added",
+      "guid": "5e722f1f-8b15-47a1-9f1b-2d6be8caa946",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "11fdc27e-2ee2-4d2f-82cb-cef7535f340a"
+        }
+      ],
+      "x": 810,
+      "y": 1861,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "000000",
+        "Added ${tempVars.amount} swag to ${tempVars.neNEEEbtdsda.displayName}",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.neNEEEbtdsda.displayHexColor}",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
       ]
     }
   ]
